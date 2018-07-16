@@ -2,7 +2,7 @@ site_name: POD : Deep Learning
 theme: readthedocs
 docs_dir: docs
 repo_url: https://github.com/PrivateOrganizationDeepLearning/DeepLearning
-site_url: https://poddeeplearning.readthedocs.io
+site_url: http://poddeeplearning.readthedocs.io
 
 markdown_extensions:
     - mdx_math
