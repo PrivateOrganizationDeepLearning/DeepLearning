@@ -6,7 +6,7 @@ theme:
   name: null
   theme_dir: material/partials
    
-docs_dir: docs
+docs_dir: "docs"
 repo_url: https://github.com/PrivateOrganizationDeepLearning/DeepLearning
 site_url: http://poddeeplearning.readthedocs.io
 
@@ -32,8 +32,8 @@ markdown_extensions:
 extra_javascript: 
     - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
-pages:
-    - Home: index.md
-    - Keras_Cookbook: 
-      - 2.simple_ann.md: Keras_Cookbook/2.simple_ann.md
+#pages:
+#    - Home: index.md
+#    - Keras_Cookbook: 
+#      - 2.simple_ann.md: Keras_Cookbook/2.simple_ann.md
 
