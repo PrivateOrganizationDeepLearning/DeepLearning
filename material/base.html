@@ -1,7 +1,4 @@
 {% import "partials/language.html" as lang with context %}
-{% set feature = config.theme.feature %}
-{% set palette = config.theme.palette %}
-{% set font = config.theme.font %}
 <!DOCTYPE html>
 <html lang="{{ lang.t('language') }}" class="no-js">
   <head>
@@ -35,7 +32,7 @@
       ] %}
         <meta name="lang:{{ key }}" content="{{ lang.t(key) }}">
       {% endfor %}
-      <link rel="shortcut icon" href="{{ base_url }}/{{ config.theme.favicon }}">
+      <link rel="shortcut icon" href="{{ base_url }}/assets/images/favicon.png">
       <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-2.9.2">
     {% endblock %}
     {% block htmltitle %}
@@ -49,29 +46,18 @@
     {% endblock %}
     {% block styles %}
       <link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/application.ba0fd1a6.css">
-      {% if palette.primary or palette.accent %}
-        <link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/application-palette.6079476c.css">
-      {% endif %}
-      {% if palette.primary %}
+      <link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/application-palette.6079476c.css">
         {% import "partials/palette.html" as map %}
-        {% set primary = map.primary(
-          palette.primary | replace(" ", "-") | lower
-        ) %}
+        {% set primary = "indigo" %}
         <meta name="theme-color" content="{{ primary }}">
-      {% endif %}
     {% endblock %}
     {% block libs %}
       <script src="{{ base_url }}/assets/javascripts/modernizr.1aa3b519.js"></script>
     {% endblock %}
     {% block fonts %}
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-      {% if font != false %}
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{
-              font.text | replace(' ', '+')  + ':300,400,400i,700|' +
-              font.code | replace(' ', '+')
-            }}">
-        <style>body,input{font-family:"{{ font.text }}","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"{{ font.code }}","Courier New",Courier,monospace}</style>
-      {% endif %}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
     {% endblock %}
     <link rel="stylesheet" href="{{ base_url }}/assets/fonts/material-icons.css">
     {% for path in extra_css %}
@@ -79,13 +65,9 @@
     {% endfor %}
     {% block extrahead %}{% endblock %}
   </head>
-  {% if palette.primary or palette.accent %}
-    {% set primary = palette.primary | replace(" ", "-") | lower %}
-    {% set accent  = palette.accent  | replace(" ", "-") | lower %}
+    {% set primary = "indigo" %}
+    {% set accent  = "indigo" %}
     <body dir="{{ lang.t('direction') }}" data-md-color-primary="{{ primary }}" data-md-color-accent="{{ accent }}">
-  {% else %}
-    <body dir="{{ lang.t('direction') }}">
-  {% endif %}
     <svg class="md-svg">
       <defs>
         {% set platform = config.extra.repo_icon or config.repo_url %}
@@ -115,9 +97,7 @@
           {% include "partials/hero.html" with context %}
         {% endif %}
       {% endblock %}
-      {% if feature.tabs %}
-        {% include "partials/tabs.html" %}
-      {% endif %}
+      {% include "partials/tabs.html" %}
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           {% block site_nav %}
