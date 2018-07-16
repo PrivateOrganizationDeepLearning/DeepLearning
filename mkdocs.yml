@@ -2,8 +2,7 @@ site_name: POD_Deep-Learning
 #from https://github.com/squidfunk/mkdocs-material
 theme: 
   name: null
-  custom_dir: material/partials
-  theme_dir: material
+  theme_dir: material/partials
   language: kr
   
 docs_dir: docs
