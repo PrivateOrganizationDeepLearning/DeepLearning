@@ -5,7 +5,28 @@ theme:
   name: null
   theme_dir: material/partials
   language: kr
-  
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: ko
+  feature:
+    tabs: true
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/images/favicon.png
+  logo:
+    icon: "\uE80C"  
+    
 docs_dir: docs
 repo_url: https://github.com/PrivateOrganizationDeepLearning/DeepLearning
 site_url: http://poddeeplearning.readthedocs.io
