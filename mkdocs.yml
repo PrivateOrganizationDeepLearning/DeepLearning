@@ -35,5 +35,5 @@ extra_javascript:
 pages:
     - Home: index.md
     - Keras_Cookbook: 
-      - 2.Keras_Cookbook: Keras_Cookbook/2.simple_ann.md
+      - 2.simple_ann.md: Keras_Cookbook/2.simple_ann.md
 
