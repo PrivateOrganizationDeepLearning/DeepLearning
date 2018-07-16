@@ -1,6 +1,7 @@
 site_name: POD_Deep-Learning
 #from https://github.com/squidfunk/mkdocs-material
-theme_dir: "material"
+theme_dir: 
+  theme_dir: "material"
   # 404 page
   static_templates:
     - 404.html
