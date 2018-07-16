@@ -1,5 +1,6 @@
 site_name: POD_Deep-Learning
 #from https://github.com/squidfunk/mkdocs-material
+theme_dir: "material"
 theme: 
   name: null
   theme_dir: material/partials
