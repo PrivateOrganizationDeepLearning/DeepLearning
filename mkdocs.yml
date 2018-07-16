@@ -3,8 +3,8 @@ site_name: POD_Deep-Learning
 theme_dir: material
 theme: 
   name: Sphinx
-  #custom_dir: material
-  theme_dir: material
+  custom_dir: material
+  #theme_dir: material
   language: kr
   
 docs_dir: docs
