@@ -2,8 +2,8 @@ site_name: POD_Deep-Learning
 #from https://github.com/squidfunk/mkdocs-material
 theme_dir: material
 theme: 
-  name: null
-  custom_dir: material
+  name: Sphinx
+  #custom_dir: material
   theme_dir: material
   language: kr
   
