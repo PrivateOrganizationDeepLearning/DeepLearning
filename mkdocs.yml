@@ -3,7 +3,9 @@ site_name: POD_Deep-Learning
 theme: 
   name: null
   custom_dir: material
-
+  theme_dir: material
+  language: kr
+  
 docs_dir: docs
 repo_url: https://github.com/PrivateOrganizationDeepLearning/DeepLearning
 site_url: http://poddeeplearning.readthedocs.io
@@ -26,9 +28,6 @@ markdown_extensions:
   - markdown.extensions.meta
   - markdown.extensions.toc:
       permalink: true
-
-theme_dir: material
-  language: ko
 
 extra_javascript: 
     - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
