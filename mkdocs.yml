@@ -32,8 +32,8 @@ markdown_extensions:
 extra_javascript: 
     - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
-pages:
-    - 'Home': 'index.md'
+#pages:
+#    - 'Home': 'index.md'
 #    - Keras_Cookbook: 
 #      - 2.simple_ann.md: Keras_Cookbook/2.simple_ann.md
 
