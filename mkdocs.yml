@@ -11,6 +11,7 @@ repo_url: https://github.com/PrivateOrganizationDeepLearning/DeepLearning
 site_url: http://poddeeplearning.readthedocs.io
 
 markdown_extensions:
+  - mdx_math
   - fenced_code
   - markdown.extensions.admonition
   - markdown.extensions.codehilite:
@@ -20,14 +21,7 @@ markdown_extensions:
   - markdown.extensions.meta
   - markdown.extensions.toc:
       permalink: true
-  - markdown.extensions.admonition
-  - markdown.extensions.codehilite:
-      guess_lang: false
-  - markdown.extensions.def_list
-  - markdown.extensions.footnotes
-  - markdown.extensions.meta
-  - markdown.extensions.toc:
-      permalink: true
+  
 
 extra_javascript: 
     - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
