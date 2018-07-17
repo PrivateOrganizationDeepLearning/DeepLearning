@@ -11,6 +11,7 @@ repo_url: https://github.com/PrivateOrganizationDeepLearning/DeepLearning
 site_url: http://poddeeplearning.readthedocs.io
 
 markdown_extensions:
+  - mdx_math
   - fenced_code
   - markdown.extensions.admonition
   - markdown.extensions.codehilite:
