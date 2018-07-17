@@ -4,7 +4,6 @@ theme_dir: "material"
 
 theme: 
   name: null
-  theme_dir: material/partials
    
 docs_dir: "docs"
 repo_url: https://github.com/PrivateOrganizationDeepLearning/DeepLearning
