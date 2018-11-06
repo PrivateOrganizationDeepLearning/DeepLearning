@@ -151,7 +151,7 @@
             </article>
             {% if page and page.meta and page.meta.author %}
               <center>
-                <github-card user="{{ page.meta.author }}"></github-card>
+                <github-card user="{{ page.meta.author }}" style="width: 80%"></github-card>
                 <script>
                       window.onload = function() {
                         var inp = document.querySelector('#username'),
@@ -187,7 +187,7 @@
                         .user {
                           font-family: "Helvetica", Arial, sans-serif;
                           display: inline-block;
-                          width: 265px;
+                          width: 100%;
                           height: 300px;
                           overflow: hidden;
                           border: 1px solid #D5D5D5;
