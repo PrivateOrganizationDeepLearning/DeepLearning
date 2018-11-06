@@ -149,8 +149,19 @@
                 {% include "partials/integrations/disqus.html" %}
               {% endblock %}
             </article>
+            {% if page and page.meta and page.meta.author %}
+              <center>
+                <meta name="gc:base" content="http://lab.lepture.com/github-cards/">
+                <meta name="gc:theme" content="medium">
+                <meta name="gc:client-id" content="client id string">
+                <meta name="gc:client-secret" content="client secret string">
+                <div class="github-card" data-github="{{ page.meta.author }}" data-width="400" data-height="150" data-theme="default"></div>
+                <script src="https://cdn.jsdelivr.net/gh/lepture/github-cards@latest/jsdelivr/widget.js"></script>
+              </center>
+            {% endif %}
           </div>
         </div>
+        
       </main>
       {% block footer %}
         {% include "partials/footer.html" %}
