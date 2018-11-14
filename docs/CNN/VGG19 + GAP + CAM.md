@@ -1,3 +1,4 @@
+author: SongChiYoung
 
 # VGG Net 구현
 
@@ -55,11 +56,11 @@ testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=False)
 
 [Pytorch tutorial](http://pytorch.kr/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py) 을 참고하여 구현하였다.
 
-STL10 데이터셋을 가져오도록 했다.(원본 [출처](https://cs.stanford.edu/~acoates/stl10/)
+STL10 데이터셋을 가져오도록 했다.(원본 [출처](https://cs.stanford.edu/~acoates/stl10/))
 
 STL10 데이터셋은 Stanford 대학에서 만든 데이터 셋 으로, 다양한 이미지들을 미리 10개의 클래스로 나누어 놓고, 이미지 별 정답 데이터를 같이 제공해주는 데이터셋 이다. 이미지 학습에 자주 사용되는 데이터셋 이며,(이외에도, [Cifar10/100](https://www.cs.toronto.edu/~kriz/cifar.html): 10개/100개 의 클래스로 나눠놓은 데이터 셋, [MNIST](http://yann.lecun.com/exdb/mnist/): 0~9 까지의 숫자 손글씨 데이터 셋 등이 자주 사용된다.) pytorch에서는 torchvision이라는 라이브러리에서 쉬운 사용을 위한 방법을 제공한다.
 
-torchbision.datasets.\[원하는 데이터 셋 이름\] 과 같은 명명 방식으로 가져오는 함수가 구성되어 있으며, 기본적으로는 각 함수별로 유사하지만 직접 수행해본 결과, STL10과 Cifar10/100 은 train set과 test set을 나누는 방법이 다르다.
+torchbision.datasets.원하는 데이터 셋 이름 과 같은 명명 방식으로 가져오는 함수가 구성되어 있으며, 기본적으로는 각 함수별로 유사하지만 직접 수행해본 결과, STL10과 Cifar10/100 은 train set과 test set을 나누는 방법이 다르다.
 
 STL10 의 경우는 위와 같이, argument 에 `split='train'` or `split='test'` 로 작성하여 나누게 되고, Cifar10/100 의 경우에는 argument에  `train=True` or `train=False` 와 같이 작성하여 나누는 방식을 취한다.
 
@@ -111,7 +112,7 @@ print(' '.join('%5s' % classes[labels[j]] for j in range(4)))
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_8_1.png)
+![png](vgg19gapcam/output_8_1.png)
 
 
 imshow는 다른 사람이 구현한 내용을 가져왔다. ([Pytorch tutorial 참조](http://pytorch.kr/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py))
@@ -531,704 +532,704 @@ for num in range(64):
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_2.png)
+![png](vgg19gapcam/output_34_2.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_3.png)
+![png](vgg19gapcam/output_34_3.png)
 
 
     ANS : monkey  REAL : monkey 1
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_5.png)
+![png](vgg19gapcam/output_34_5.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_6.png)
+![png](vgg19gapcam/output_34_6.png)
 
 
     ANS : dog  REAL : dog 2
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_8.png)
+![png](vgg19gapcam/output_34_8.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_9.png)
+![png](vgg19gapcam/output_34_9.png)
 
 
     ANS : ship  REAL : airplance 3
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_11.png)
+![png](vgg19gapcam/output_34_11.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_12.png)
+![png](vgg19gapcam/output_34_12.png)
 
 
     ANS : cat  REAL : cat 4
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_14.png)
+![png](vgg19gapcam/output_34_14.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_15.png)
+![png](vgg19gapcam/output_34_15.png)
 
 
     ANS : bird  REAL : bird 5
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_17.png)
+![png](vgg19gapcam/output_34_17.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_18.png)
+![png](vgg19gapcam/output_34_18.png)
 
 
     ANS : horse  REAL : bird 6
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_20.png)
+![png](vgg19gapcam/output_34_20.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_21.png)
+![png](vgg19gapcam/output_34_21.png)
 
 
     ANS : bird  REAL : bird 7
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_23.png)
+![png](vgg19gapcam/output_34_23.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_24.png)
+![png](vgg19gapcam/output_34_24.png)
 
 
     ANS : deer  REAL : deer 8
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_26.png)
+![png](vgg19gapcam/output_34_26.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_27.png)
+![png](vgg19gapcam/output_34_27.png)
 
 
     ANS : horse  REAL : deer 9
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_29.png)
+![png](vgg19gapcam/output_34_29.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_30.png)
+![png](vgg19gapcam/output_34_30.png)
 
 
     ANS : bird  REAL : airplance 10
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_32.png)
+![png](vgg19gapcam/output_34_32.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_33.png)
+![png](vgg19gapcam/output_34_33.png)
 
 
     ANS : airplance  REAL : airplance 11
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_35.png)
+![png](vgg19gapcam/output_34_35.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_36.png)
+![png](vgg19gapcam/output_34_36.png)
 
 
     ANS : deer  REAL : deer 12
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_38.png)
+![png](vgg19gapcam/output_34_38.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_39.png)
+![png](vgg19gapcam/output_34_39.png)
 
 
     ANS : airplance  REAL : airplance 13
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_41.png)
+![png](vgg19gapcam/output_34_41.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_42.png)
+![png](vgg19gapcam/output_34_42.png)
 
 
     ANS : cat  REAL : bird 14
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_44.png)
+![png](vgg19gapcam/output_34_44.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_45.png)
+![png](vgg19gapcam/output_34_45.png)
 
 
     ANS : cat  REAL : dog 15
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_47.png)
+![png](vgg19gapcam/output_34_47.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_48.png)
+![png](vgg19gapcam/output_34_48.png)
 
 
     ANS : deer  REAL : deer 16
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_50.png)
+![png](vgg19gapcam/output_34_50.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_51.png)
+![png](vgg19gapcam/output_34_51.png)
 
 
     ANS : truck  REAL : truck 17
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_53.png)
+![png](vgg19gapcam/output_34_53.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_54.png)
+![png](vgg19gapcam/output_34_54.png)
 
 
     ANS : airplance  REAL : airplance 18
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_56.png)
+![png](vgg19gapcam/output_34_56.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_57.png)
+![png](vgg19gapcam/output_34_57.png)
 
 
     ANS : horse  REAL : horse 19
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_59.png)
+![png](vgg19gapcam/output_34_59.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_60.png)
+![png](vgg19gapcam/output_34_60.png)
 
 
     ANS : horse  REAL : dog 20
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_62.png)
+![png](vgg19gapcam/output_34_62.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_63.png)
+![png](vgg19gapcam/output_34_63.png)
 
 
     ANS : cat  REAL : cat 21
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_65.png)
+![png](vgg19gapcam/output_34_65.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_66.png)
+![png](vgg19gapcam/output_34_66.png)
 
 
     ANS : dog  REAL : bird 22
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_68.png)
+![png](vgg19gapcam/output_34_68.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_69.png)
+![png](vgg19gapcam/output_34_69.png)
 
 
     ANS : cat  REAL : cat 23
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_71.png)
+![png](vgg19gapcam/output_34_71.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_72.png)
+![png](vgg19gapcam/output_34_72.png)
 
 
     ANS : car  REAL : car 24
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_74.png)
+![png](vgg19gapcam/output_34_74.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_75.png)
+![png](vgg19gapcam/output_34_75.png)
 
 
     ANS : horse  REAL : horse 25
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_77.png)
+![png](vgg19gapcam/output_34_77.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_78.png)
+![png](vgg19gapcam/output_34_78.png)
 
 
     ANS : bird  REAL : dog 26
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_80.png)
+![png](vgg19gapcam/output_34_80.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_81.png)
+![png](vgg19gapcam/output_34_81.png)
 
 
     ANS : cat  REAL : dog 27
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_83.png)
+![png](vgg19gapcam/output_34_83.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_84.png)
+![png](vgg19gapcam/output_34_84.png)
 
 
     ANS : truck  REAL : car 28
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_86.png)
+![png](vgg19gapcam/output_34_86.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_87.png)
+![png](vgg19gapcam/output_34_87.png)
 
 
     ANS : dog  REAL : monkey 29
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_89.png)
+![png](vgg19gapcam/output_34_89.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_90.png)
+![png](vgg19gapcam/output_34_90.png)
 
 
     ANS : truck  REAL : bird 30
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_92.png)
+![png](vgg19gapcam/output_34_92.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_93.png)
+![png](vgg19gapcam/output_34_93.png)
 
 
     ANS : horse  REAL : horse 31
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_95.png)
+![png](vgg19gapcam/output_34_95.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_96.png)
+![png](vgg19gapcam/output_34_96.png)
 
 
     ANS : dog  REAL : cat 32
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_98.png)
+![png](vgg19gapcam/output_34_98.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_99.png)
+![png](vgg19gapcam/output_34_99.png)
 
 
     ANS : monkey  REAL : monkey 33
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_101.png)
+![png](vgg19gapcam/output_34_101.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_102.png)
+![png](vgg19gapcam/output_34_102.png)
 
 
     ANS : truck  REAL : truck 34
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_104.png)
+![png](vgg19gapcam/output_34_104.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_105.png)
+![png](vgg19gapcam/output_34_105.png)
 
 
     ANS : truck  REAL : car 35
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_107.png)
+![png](vgg19gapcam/output_34_107.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_108.png)
+![png](vgg19gapcam/output_34_108.png)
 
 
     ANS : deer  REAL : deer 36
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_110.png)
+![png](vgg19gapcam/output_34_110.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_111.png)
+![png](vgg19gapcam/output_34_111.png)
 
 
     ANS : monkey  REAL : monkey 37
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_113.png)
+![png](vgg19gapcam/output_34_113.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_114.png)
+![png](vgg19gapcam/output_34_114.png)
 
 
     ANS : truck  REAL : truck 38
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_116.png)
+![png](vgg19gapcam/output_34_116.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_117.png)
+![png](vgg19gapcam/output_34_117.png)
 
 
     ANS : horse  REAL : dog 39
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_119.png)
+![png](vgg19gapcam/output_34_119.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_120.png)
+![png](vgg19gapcam/output_34_120.png)
 
 
     ANS : bird  REAL : bird 40
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_122.png)
+![png](vgg19gapcam/output_34_122.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_123.png)
+![png](vgg19gapcam/output_34_123.png)
 
 
     ANS : airplance  REAL : truck 41
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_125.png)
+![png](vgg19gapcam/output_34_125.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_126.png)
+![png](vgg19gapcam/output_34_126.png)
 
 
     ANS : airplance  REAL : airplance 42
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_128.png)
+![png](vgg19gapcam/output_34_128.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_129.png)
+![png](vgg19gapcam/output_34_129.png)
 
 
     ANS : horse  REAL : horse 43
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_131.png)
+![png](vgg19gapcam/output_34_131.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_132.png)
+![png](vgg19gapcam/output_34_132.png)
 
 
     ANS : deer  REAL : deer 44
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_134.png)
+![png](vgg19gapcam/output_34_134.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_135.png)
+![png](vgg19gapcam/output_34_135.png)
 
 
     ANS : truck  REAL : truck 45
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_137.png)
+![png](vgg19gapcam/output_34_137.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_138.png)
+![png](vgg19gapcam/output_34_138.png)
 
 
     ANS : bird  REAL : bird 46
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_140.png)
+![png](vgg19gapcam/output_34_140.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_141.png)
+![png](vgg19gapcam/output_34_141.png)
 
 
     ANS : bird  REAL : bird 47
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_143.png)
+![png](vgg19gapcam/output_34_143.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_144.png)
+![png](vgg19gapcam/output_34_144.png)
 
 
     ANS : cat  REAL : cat 48
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_146.png)
+![png](vgg19gapcam/output_34_146.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_147.png)
+![png](vgg19gapcam/output_34_147.png)
 
 
     ANS : car  REAL : car 49
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_149.png)
+![png](vgg19gapcam/output_34_149.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_150.png)
+![png](vgg19gapcam/output_34_150.png)
 
 
     ANS : cat  REAL : dog 50
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_152.png)
+![png](vgg19gapcam/output_34_152.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_153.png)
+![png](vgg19gapcam/output_34_153.png)
 
 
     ANS : cat  REAL : deer 51
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_155.png)
+![png](vgg19gapcam/output_34_155.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_156.png)
+![png](vgg19gapcam/output_34_156.png)
 
 
     ANS : airplance  REAL : airplance 52
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_158.png)
+![png](vgg19gapcam/output_34_158.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_159.png)
+![png](vgg19gapcam/output_34_159.png)
 
 
     ANS : airplance  REAL : airplance 53
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_161.png)
+![png](vgg19gapcam/output_34_161.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_162.png)
+![png](vgg19gapcam/output_34_162.png)
 
 
     ANS : car  REAL : truck 54
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_164.png)
+![png](vgg19gapcam/output_34_164.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_165.png)
+![png](vgg19gapcam/output_34_165.png)
 
 
     ANS : ship  REAL : ship 55
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_167.png)
+![png](vgg19gapcam/output_34_167.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_168.png)
+![png](vgg19gapcam/output_34_168.png)
 
 
     ANS : horse  REAL : horse 56
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_170.png)
+![png](vgg19gapcam/output_34_170.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_171.png)
+![png](vgg19gapcam/output_34_171.png)
 
 
     ANS : monkey  REAL : monkey 57
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_173.png)
+![png](vgg19gapcam/output_34_173.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_174.png)
+![png](vgg19gapcam/output_34_174.png)
 
 
     ANS : car  REAL : car 58
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_176.png)
+![png](vgg19gapcam/output_34_176.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_177.png)
+![png](vgg19gapcam/output_34_177.png)
 
 
     ANS : ship  REAL : airplance 59
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_179.png)
+![png](vgg19gapcam/output_34_179.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_180.png)
+![png](vgg19gapcam/output_34_180.png)
 
 
     ANS : airplance  REAL : airplance 60
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_182.png)
+![png](vgg19gapcam/output_34_182.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_183.png)
+![png](vgg19gapcam/output_34_183.png)
 
 
     ANS : dog  REAL : bird 61
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_185.png)
+![png](vgg19gapcam/output_34_185.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_186.png)
+![png](vgg19gapcam/output_34_186.png)
 
 
     ANS : bird  REAL : bird 62
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_188.png)
+![png](vgg19gapcam/output_34_188.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_189.png)
+![png](vgg19gapcam/output_34_189.png)
 
 
     ANS : monkey  REAL : monkey 63
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_191.png)
+![png](vgg19gapcam/output_34_191.png)
 
 
 
-![png](CNN\VGG19 + GAP + CAM/output_34_192.png)
+![png](vgg19gapcam/output_34_192.png)
 
 
 CAM을 구현하였다.
