@@ -1,6 +1,6 @@
 author: SongChiYoung
 
-# VGG Net 구현
+# VGG Net 과 CAM 구현
 
 ## Initial
 
