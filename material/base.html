@@ -57,7 +57,8 @@
     {% block fonts %}
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700" rel="stylesheet">
+        <style>body,input{font-family:'Noto Sans KR',"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:'Noto Sans KR',"Roboto Mono","Courier New",Courier,monospace}</style>
     {% endblock %}
     <link rel="stylesheet" href="{{ base_url }}/assets/fonts/material-icons.css">
     {% for path in extra_css %}
