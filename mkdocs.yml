@@ -27,6 +27,8 @@ extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML
     #- http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
+extra:
+  disqus: 'pod-kr'
 #pages:
 #    - 'Home': 'index.md'
 #    - Keras_Cookbook: 
