@@ -1,4 +1,4 @@
-﻿Author: ILHWAN KIM
+Author: HIDELBERN
 
 # GoogLeNet
 ## 1. 들어가기
