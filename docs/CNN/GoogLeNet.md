@@ -1,4 +1,4 @@
-﻿Author: ILHWAN KIM
+﻿Author: dlfghks383@gmail.com
 
 # GoogLeNet
 ## 1. 들어가기
