@@ -1,4 +1,6 @@
 
+﻿Author: pulpan92
+
 # AlexNet
 
 ## 1. Introduction
