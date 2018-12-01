@@ -1,4 +1,4 @@
-﻿Author: dlfghks383@gmail.com
+﻿Author: HIDELBERN
 
 # GoogLeNet
 ## 1. 들어가기
