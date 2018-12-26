@@ -17,6 +17,7 @@
 #### 1) 인수분해
 
 ![figure.6](https://norman3.github.io/papers/images/google_inception/f06.png)
+
 5x5 convolution을 적용하면 한번에 넓은 영역의 특징을 추출해낼 수 있지만, 25개의 패러미터를 학습해야 합니다.
 
 그런데 이 5x5 convolution을, 3x3 convolution을 두번에 걸쳐 연산한다면 어떨까요? 3x3은 9개의 패러미터를 가지고 있으므로, 총 18개의 패러미터를 사용하여 5x5와 같은 결과를 얻으면서도 더 깊은 층을 형성하는 것이 가능합니다.
@@ -56,6 +57,7 @@
 바로 v4로 넘어 온 이유는, v2에서 적용되는 개념에서 크게 바뀌는 점이 없기 때문입니다. 최적화와 정확도 증가를 위한 모듈의 변경은 있지만, 인수분해 등과 같이 큰 구조적 차이가 발생하지는 않았습니다.
 
 ![figure.18](https://norman3.github.io/papers/images/google_inception/f18.png)
+
 v4에서 눈여겨볼만한 구조적 특징은, 그리드 변경이 이루어지는 모듈이 구분되어 있다는 점입니다.
 
 세 계층의 인셉션 모듈에서는 그리드의 변경이 없고, 두 계층의 리덕션 모듈에서는 그리드 사이즈가 절반으로 줄어듭니다.
@@ -64,20 +66,24 @@ v4에서 눈여겨볼만한 구조적 특징은, 그리드 변경이 이루어�
 [Reduction A]
 ![figure.24](https://norman3.github.io/papers/images/google_inception/f24.png)
 [Reduction B]
+
 이 리덕션 모듈에서 앞서 말씀드렸던 그리드 사이즈를 줄이기 위한 고찰이 적용되며, 이는 또한 전처리 영역(stem)에서도 찾아볼 수 있습니다.
 
 ![figure.19](https://norman3.github.io/papers/images/google_inception/f19.png)
 [Stem]
+
 리덕션 영역과 같이, 그리드 사이즈를 줄이는 과정에서 병렬연산이 적용되었음을 알 수 있습니다.
 
 ![figure.20](https://norman3.github.io/papers/images/google_inception/f20.png)
 [Inception A]
+
 인셉션v1과 구조적인 면에서 크게 달라지지는 않았습니다. 다만 효율성을 위하여 커널 인수분해의 개념이 적용된 것을 확인할 수 있습니다. 이는 다른 모듈에서도 마찬가지입니다.
 
 
 그럼 이제 **Inception-Resnet**에 관하여 이야기하도록 합시다. Inception-Resnet이란, 인셉션 네트워크에 Residual Connection을 적용한 네트워크를 말합니다.  Residual Connection은 무엇일까요?
 
 ![figure.17](https://norman3.github.io/papers/images/google_inception/f17.png)
+
 Residual Connection이란, 2015년에 등장한 Resnet에서 등장한 개념으로 아웃풋에 인풋 이미지를 합하여 리턴시키는 과정을 말합니다.
 
 Resnet의 제작자는, 네트워크가 깊어짐에 따라 vanishing gradient가 발생하여, 학습이 제대로 이루어지지 않는 것을 방지하기 위해 Residual connection이 필수라고 설명하였습니다.
