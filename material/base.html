@@ -152,7 +152,9 @@
             </article>
             {% if page and page.meta and page.meta.author %}
               <center>
+                <a href="https://github.com/{{ page.meta.author }}">
                 <github-card user="{{ page.meta.author }}" style="width: 80%"></github-card>
+                </a>
                 <script>
                       window.onload = function() {
                         var inp = document.querySelector('#username'),
