@@ -1,5 +1,4 @@
-
-﻿Author: pulpan92
+Author: pulpan92
 
 # AlexNet
 
